@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>Lesson 4</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    </head>
+    <body>
+
+        <header>
+            <p>
+                Header
+            </p>
+        </header>
+
+        <section id="page1" style="height:1200px;border:solid 1px blue;">
+
+            <div >
+
+                <a href="#page2">
+                    Go to Page2
+                </a>
+
+                <video width="320" height="240" controls autoplay>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"  type="video/webm">
+                    您的浏览器不支持 HTML5 video 标签。
+                </video>
+        
+        
+                <form>
+        
+                    <input type="text" name="username" />
+        
+                    <hr />
+        
+                    <input type="email" name="email" />
+        
+                    <input type="number" name="code" min="99" />
+
+                    <input type="range" id="a" value="10">
+
+                    <hr />
+
+
+
+                    <progress value="1" max=10></progress>
+
+                    <hr />
+
+                    <meter value="2" min="0" max="10"></meter>
+
+                    <hr />
+                   
+                    <input list="browsers" name="browserX">
+                    <datalist id="browsers">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
+
+
+                    <hr />
+
+                    <select name="chooseItems" value="">
+                        <option value="1">Selection One</option>
+                        <option value="2" selected>Selection Two</option>
+                    </select>
+
+                    <hr />
+        
+        
+                    <button>Submit</button>
+        
+                </form>
+        
+                <canvas width="200" height="100" id="rect">
+        
+                </canvas>
+        
+                <script>
+        
+                    const rect = document.getElementById("rect");
+                    const ctx = rect.getContext("2d");
+        
+                    ctx.fillStyle= "green";
+        
+                    ctx.fillRect(0,0,200,100);
+                    
+        
+                </script>
+        
+                <p>
+                    after canvas
+                </p>
+
+            </div>
+        </section>
+
+
+        <section id="page2">
+
+            <div style="height:900px;border:solid 1px green;">
+
+                <div>
+
+                    <a href="#page1">
+                        Go to Page1
+                    </a>
+
+                    <p>
+                        这是页面2
+                    </p>
+                </div>
+
+            </div>
+
+            <details>
+                <summary>examples.</summary> 
+                <p> - for examples.</p>
+                <p>All content and graphics ...</p>
+            </details>
+
+            <figure>
+                <figcaption>Fig.1 - A view of the pulpit rock in Norway.</figcaption>
+                  <img src="../lesson3/apple-touch-icon.png" alt="The Pulpit Rock" width="304" height="228">
+            </figure>
+
+        </section>
+
+       
+
+    </body>
+</html>
