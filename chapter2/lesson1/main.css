@@ -1,0 +1,17 @@
+
+.name_bak{
+    background-color:green;
+}
+
+/*** comment ***/
+
+.name {
+    background-color:orange;
+   
+}
+
+.btn-login{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
