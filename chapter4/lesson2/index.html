@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Login BootStrap</title>
+        <link href="bootstrap.min.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                    <form class="my-form" id="myform" method="get" action="https://cn.bing.com/search">
+
+                        <div class="container row" style="margin-top:10px;">
+                            <label class="form-label">UserName:</label>
+                            <input class="form-control" id="name" type="text" name="username" />
+                        </div>
+        
+                        <div class="container row" style="margin-top:10px;">
+                            <label class="form-label">Password:</label>
+                            <input class="form-control" type="password" name="password" />
+                        </div>
+        
+                        <div class="container row" style="margin-top:10px;">
+                            <label class="form-label" id="random-check">1 + 1 = ?</label>
+                            <input class="form-control" type="number" name="checkRobot" />
+                        </div>
+        
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col">
+                                <input class="form-control" type="text" name="verifycode" />
+                            </div>
+                            <div class="col">
+                                <button onclick="LoginForm.shared.getSMSCode(event)" id="sms-btn" class="btn btn-primary">验证码</button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="q" value="login test is ok" />
+                        <div class="container row" style="margin-top:10px;">
+                            <button class="btn btn-primary" onclick="LoginForm.shared.login(event)">登录</button>
+                        </div>
+        
+                    </form>
+
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+           
+        </div>
+
+        <script src="bootstrap.min.js"></script>
+
+    </body>
+</html>
