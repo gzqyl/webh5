@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Login React</title>
+        <link href="bootstrap.min.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <div class="container" id="app">
+           
+        </div>
+        
+        <script src="react.js"></script>
+        <script src="react.dom.js"></script>
+
+        <script src="babel.js"></script>
+
+        <script>
+            
+            //之前视频里一直无法正确加载页面，是因为这个错误：
+
+            //The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX.
+            
+
+        </script>
+
+        <script type="text/babel">
+
+            const { Component } = React
+
+            class App extends Component{
+
+                //model可以写在这里，或者其他地方，反正是与视图分开的
+
+                constructor(props){
+                    super(props)
+                    this.checkX = Math.ceil(Math.random() * 10)
+                    this.checkY = Math.ceil(Math.random() * 10)
+                    this.state = {
+                        userName: "",
+                        passwd: "",
+                        checkRobot: "",
+                        verifyCode: ""
+                    }
+                }
+
+                setUserName(e){
+                    this.setState({
+                        userName: e.target.value
+                    })
+                }
+
+                setPasswd(e){
+                    this.setState({
+                        passwd: e.target.value
+                    })
+                }
+
+                setRobot(e){
+                    this.setState({
+                        checkRobot: e.target.value
+                    })
+                }
+
+                setVerifyCode(e){
+                    this.setState({
+                        verifyCode: e.target.value
+                    })
+                }
+
+                sendCode(e){
+                    e.preventDefault()
+                    console.log("--todo--if you are interested in, just try it...")
+                }
+
+                submitForm(e){
+                    e.preventDefault()
+
+                    console.log(this.state)
+
+                    console.log("--todo--if you are interested in, just try it...")
+                }
+
+
+                render(){
+
+                            //return 里写的就是模板， 也就是我们说的 V（View）视图
+                    return (<div class="row">
+                        <div class="col">
+                        </div>
+                        <div class="col">
+
+                            <form class="my-form" id="myform" method="get" action="https://cn.bing.com/search">
+
+                                <div class="container row" style={{marginTop: '10px'}}>
+                                    <label class="form-label">UserName:</label>
+                                    <input class="form-control" id="name" type="text" name="username" value={this.state.userName} onChange={(e)=>this.setUserName(e)} />
+                                </div>
+                
+                                <div class="container row" style={{marginTop: '10px'}}>
+                                    <label class="form-label">Password:</label>
+                                    <input class="form-control" type="password" name="password" value={this.state.passwd} onChange={(e)=>this.setPasswd(e)} />
+                                </div>
+                
+                                <div class="container row" style={{marginTop: '10px'}}>
+                                    <label class="form-label" id="random-check">{this.checkX} + {this.checkY} = ?</label>
+                                    <input class="form-control" type="number" name="checkRobot" value={this.state.checkRobot} onChange={(e)=>this.setRobot(e)} />
+                                </div>
+                
+                                <div class="row" style={{marginTop: '10px'}}>
+                                    <div class="col">
+                                        <input class="form-control" type="text" name="verifycode" value={this.state.verifyCode} onChange={(e) => this.setVerifyCode(e)} />
+                                    </div>
+                                    <div class="col">
+                                        <button id="sms-btn" class="btn btn-primary" onClick={(e)=> this.sendCode(e)}>验证码</button>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="q" value="login test is ok" />
+                                <div class="container row" style={{marginTop: '10px'}}>
+                                    <button class="btn btn-primary" onClick={(e)=>this.submitForm(e)}>登录</button>
+                                </div>
+                
+                            </form>
+
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>)
+
+                }
+
+
+            }
+
+            const domContainer = document.querySelector('#app');
+            const root = ReactDOM.createRoot(domContainer);
+            root.render(<App />);
+
+        </script>
+
+    </body>
+</html>
